@@ -1,10 +1,15 @@
-import s from "./Navigation.module.css";
+import { NavLink } from "react-router-dom";
+import User from "../User/User";
 
-export default function Navigation() {
+export default function Navigation(params) {
   return (
-    <div className={s.containerNav}>
-      <div className={s.containerUser}></div>
-      <p className={s.user}>Доброго дня, ... !</p>
+    <div>
+      <NavLink to="/contacts" exact>
+        Контакти
+      </NavLink>
+      <NavLink to="/register"> Реєстрація</NavLink>
+      <NavLink to="/login"> Авторизація</NavLink>
+      <User />
     </div>
   );
 }
