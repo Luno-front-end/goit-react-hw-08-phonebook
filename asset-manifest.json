@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/goit-react-hw-08-phonebook/static/css/main.414e51ab.chunk.css",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.af3ec77b.chunk.js",
+    "main.js.map": "/goit-react-hw-08-phonebook/static/js/main.af3ec77b.chunk.js.map",
+    "runtime-main.js": "/goit-react-hw-08-phonebook/static/js/runtime-main.eb8ac25e.js",
+    "runtime-main.js.map": "/goit-react-hw-08-phonebook/static/js/runtime-main.eb8ac25e.js.map",
+    "static/js/2.492dd248.chunk.js": "/goit-react-hw-08-phonebook/static/js/2.492dd248.chunk.js",
+    "static/js/2.492dd248.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/2.492dd248.chunk.js.map",
+    "index.html": "/goit-react-hw-08-phonebook/index.html",
+    "static/css/main.414e51ab.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/main.414e51ab.chunk.css.map",
+    "static/js/2.492dd248.chunk.js.LICENSE.txt": "/goit-react-hw-08-phonebook/static/js/2.492dd248.chunk.js.LICENSE.txt",
+    "static/media/PhoneBook.module.css": "/goit-react-hw-08-phonebook/static/media/dark-background.8809aea4.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eb8ac25e.js",
+    "static/js/2.492dd248.chunk.js",
+    "static/css/main.414e51ab.chunk.css",
+    "static/js/main.af3ec77b.chunk.js"
+  ]
+}
