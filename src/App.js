@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 
 import s from "./components/PhoneBook.module.css";
 
-import phonebookOperations from "./Redux/phonebook/phonebook-operations";
+import authOperations from "./Redux/auth/auth-operations";
 import NavBar from "./components/NavBar/NavBar";
 import { Route, Switch } from "react-router-dom";
 import RegisterView from "./components/views/RegisterView";
@@ -15,7 +15,7 @@ import HomeView from "./components/views/HomeView";
 export default function Mobile() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(phonebookOperations.fetchContact());
+    dispatch(authOperations.getCurrentUser());
   }, [dispatch]);
 
   return (

@@ -20,7 +20,8 @@ const register = createAsyncThunk("auth/register", async (credentials) => {
     return data;
   } catch (error) {
     if (error) {
-      // return console.log(error.message);
+      alert("Такий користувач вже є, спробуйте авторизуватися.");
+      throw new Error(error);
     }
   }
 });
@@ -31,7 +32,12 @@ const logIn = createAsyncThunk("auth/logIn", async (credentials) => {
     token.set(data.token);
     return data;
   } catch (error) {
-    // return alert(error.message);
+    if (error) {
+      alert(
+        "Такого користувача немає, або дані були введені невірно, спробуйте ще раз."
+      );
+      throw new Error(error);
+    }
   }
 });
 
@@ -41,14 +47,59 @@ const logOut = createAsyncThunk("auth/logout", async () => {
     token.unset();
     return data;
   } catch (error) {
-    // return alert(error.message);
+    if (error) {
+      alert("Щось пішло не так, спробуйте ще раз.");
+      throw new Error(error);
+    }
   }
 });
+
+// const getUser = createAsyncThunk("auth/getUser", async (_, credentials) => {
+
+//   // const persistedToken = state.auth.token;
+
+//   // if (persistedToken === null) {
+//   //   console.log("Токена нет, уходим из getUser");
+//   //   return;
+//   // }
+//     token.set(data.token);
+
+//   try {
+//     const { data } = await axios.post("/users/current", credentials);
+//     return data;
+//   } catch (error) {
+//     // return alert(error.message);
+//   }
+// });
+
+const getCurrentUser = createAsyncThunk(
+  "auth/getCurrentUser",
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const preToken = state.auth.token;
+
+    if (token === null) {
+      return thunkAPI.rejectWithValue();
+    }
+
+    token.set(preToken);
+    try {
+      const { data } = await axios.get("/users/current");
+      return data;
+    } catch (error) {
+      if (error) {
+        alert("Щось пішло не так, спробуйте ще раз. error");
+        throw new Error(error);
+      }
+    }
+  }
+);
 
 const authOperations = {
   register,
   logIn,
   logOut,
+  getCurrentUser,
 };
 
 export default authOperations;
