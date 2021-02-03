@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import shortid from "shortid";
 
 import authOperations from "../../Redux/auth/auth-operations";
+import s from "../PhoneBook.module.css";
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -31,22 +33,36 @@ export default function Login() {
     setPassword("");
   };
 
+  const idEmail = shortid.generate();
+  const idPassword = shortid.generate();
+
   return (
     <div>
-      <form action="" onSubmit={handleSubmite}>
+      <h1 className={s.headingForm}>Сторінка авторизації</h1>
+      <form className={s.form} action="" onSubmit={handleSubmite}>
+        <label className={s.labelName} htmlFor={idEmail}>
+          Пошта
+        </label>
         <input
+          id={idEmail}
           value={email}
           name="email"
           type="email"
           onChange={handleChange}
         />
+        <label className={s.labelName} htmlFor={idPassword}>
+          Пароль
+        </label>
         <input
+          id={idPassword}
           value={password}
           name="password"
           type="password"
           onChange={handleChange}
         />
-        <button type="submit">Увійти</button>
+        <button className={s.btnReg} type="submit">
+          Увійти
+        </button>
       </form>
     </div>
   );

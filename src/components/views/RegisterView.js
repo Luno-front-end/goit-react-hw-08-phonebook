@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import shortid from "shortid";
 
 import { authOperations } from "../../Redux/auth";
+import s from "../PhoneBook.module.css";
 
 export default function RegisterView() {
   const dispatch = useDispatch();
@@ -34,35 +36,48 @@ export default function RegisterView() {
     setEmail("");
     setPassword("");
   };
-
+  const idName = shortid.generate();
+  const idEmail = shortid.generate();
+  const idPassword = shortid.generate();
   return (
     <div>
-      <form action="" onSubmit={handleSubmite}>
-        <label>
+      <h1 className={s.headingForm}>Сторінка реєстрації</h1>
+      <form className={s.form} action="" onSubmit={handleSubmite}>
+        <label htmlFor={idName} className={s.labelName}>
           Ім'я
-          <input value={name} name="name" type="name" onChange={handleChange} />
         </label>
-        <label>
+        <input
+          id={idName}
+          value={name}
+          name="name"
+          type="name"
+          onChange={handleChange}
+        />
+        <label htmlFor={idEmail} className={s.labelName}>
           Пошта
-          <input
-            value={email}
-            name="email"
-            type="email"
-            onChange={handleChange}
-          />
         </label>
+        <input
+          id={idEmail}
+          value={email}
+          name="email"
+          type="email"
+          onChange={handleChange}
+        />
 
-        <label>
+        <label htmlFor={idPassword} className={s.labelName}>
           Пароль
-          <input
-            value={password}
-            name="password"
-            type="password"
-            onChange={handleChange}
-          />
         </label>
+        <input
+          id={idPassword}
+          value={password}
+          name="password"
+          type="password"
+          onChange={handleChange}
+        />
 
-        <button type="submit">Зареєструватися</button>
+        <button className={s.btnReg} type="submit">
+          Зареєструватися
+        </button>
       </form>
     </div>
   );

@@ -17,9 +17,6 @@ export default function ContactsView() {
     <>
       <h1 className={s.headingForm}>Телефонна книга</h1>
       <Form />
-      {/* <Form onSubmit={addContact} contactList={onCheckName} /> */}
-      {/* <SearchContact velue={filter} SearchContact={veluesFilter} /> */}
-      {/* <ContactList contactList={getFilter()} onDeleted={deletedContact} /> */}
       <h2 className={s.contactList}>Контакти</h2>
       <SearchContact />
       <ContactList />

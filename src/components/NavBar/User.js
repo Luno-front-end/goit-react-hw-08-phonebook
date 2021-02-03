@@ -8,12 +8,18 @@ export default function User() {
   const dispatch = useDispatch();
 
   return (
-    <div className={s.containerNav}>
-      <div className={s.containerUser}></div>
-      <p className={s.user}>Доброго дня, {userName} !</p>
-      <button type="button" onClick={() => dispatch(authOperations.logOut())}>
-        Вийти
-      </button>
-    </div>
+    <>
+      <div className={s.containerNav}>
+        <div className={s.containerUser}></div>
+        <p className={s.user}>Доброго дня, {userName} !</p>
+        <button
+          className={s.btn}
+          type="button"
+          onClick={() => dispatch(authOperations.logOut())}
+        >
+          Вийти
+        </button>
+      </div>
+    </>
   );
 }

@@ -45,6 +45,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 30px;
 }
 .labelName {
   font-size: 30px;
@@ -144,4 +145,37 @@ li {
   color: black;
   background-color: rgb(255, 255, 255);
   border: 1px solid rgb(201, 67, 57);
+}
+.paragraphHome {
+  display: flex;
+  justify-content: center;
+
+  font-size: 25px;
+  color: white;
+
+  margin-top: 35px;
+  margin-bottom: 0;
+}
+.btnReg {
+  min-width: 90px;
+  height: 35px;
+  font-size: 20px;
+  color: rgb(122, 122, 122);
+  padding: 5px;
+  background-color: rgb(163, 203, 255);
+  border: none;
+  border-radius: 10px;
+  margin-top: 15px;
+
+  cursor: pointer;
+  outline: none;
+
+  transition: color 300ms linear, background-color 300ms linear;
+}
+
+.btnReg:hover,
+.btnReg:focus {
+  color: black;
+  background-color: rgb(98, 166, 255);
+  transition: color 300ms linear, background-color 300ms linear;
 }

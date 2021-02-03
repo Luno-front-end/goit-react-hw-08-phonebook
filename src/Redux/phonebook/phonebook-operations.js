@@ -1,8 +1,8 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+/* eslint-disable import/no-anonymous-default-export */
 import axios from "axios";
 import * as actions from "./phonebook-actions";
 
-axios.defaults.baseURL = "https://goit-phonebook-api.herokuapp.com";
+axios.defaults.baseURL = "https://goit-phonebook-api.herokuapp.com/";
 
 const fetchContact = () => (dispatch) => {
   dispatch(actions.fetchContactRequest());
@@ -12,8 +12,9 @@ const fetchContact = () => (dispatch) => {
     .catch((error) => actions.fetchContactError(error));
 };
 
-const addContact = (newName, number) => (dispatch) => {
-  const contact = { newName, number };
+const addContact = (name, number) => (dispatch) => {
+  const contact = { name, number };
+  console.log(contact);
   dispatch(actions.addContactRequest());
   axios
     .post("/contacts", contact)

@@ -6,7 +6,7 @@ axios.defaults.baseURL = "https://goit-phonebook-api.herokuapp.com";
 
 const token = {
   set(token) {
-    axios.defaults.headers.common.Authorization = `Barer ${token}`;
+    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
   },
   unset() {
     axios.defaults.headers.common.Authorization = "";
@@ -54,31 +54,13 @@ const logOut = createAsyncThunk("auth/logout", async () => {
   }
 });
 
-// const getUser = createAsyncThunk("auth/getUser", async (_, credentials) => {
-
-//   // const persistedToken = state.auth.token;
-
-//   // if (persistedToken === null) {
-//   //   console.log("Токена нет, уходим из getUser");
-//   //   return;
-//   // }
-//     token.set(data.token);
-
-//   try {
-//     const { data } = await axios.post("/users/current", credentials);
-//     return data;
-//   } catch (error) {
-//     // return alert(error.message);
-//   }
-// });
-
 const getCurrentUser = createAsyncThunk(
   "auth/getCurrentUser",
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     const preToken = state.auth.token;
 
-    if (token === null) {
+    if (preToken === null) {
       return thunkAPI.rejectWithValue();
     }
 
