@@ -1,5 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { authSelectors, authOperations } from "../../Redux/auth";
+import { ImUser } from "react-icons/im";
+// ImUser;
 
 import s from "./User.module.css";
 
@@ -10,7 +12,9 @@ export default function User() {
   return (
     <>
       <div className={s.containerNav}>
-        <div className={s.containerUser}></div>
+        <div>
+          <ImUser className={s.containerUser} />
+        </div>
         <p className={s.user}>Доброго дня, {userName} !</p>
         <button
           className={s.btn}

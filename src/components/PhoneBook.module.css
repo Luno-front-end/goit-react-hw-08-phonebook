@@ -1,7 +1,7 @@
 body {
   background: url(../images/dark-background.jpg);
   background-attachment: fixed;
-  font-family: "Yanone Kaffeesatz";
+  font-family: "Alegreya";
 }
 .container {
   position: absolute;
@@ -73,6 +73,7 @@ body {
   letter-spacing: 3px;
   color: #000000;
   transition: 200ms color linear;
+  font-family: "Nunito";
 }
 .numberContact a:hover {
   color: #66af50;
@@ -159,7 +160,10 @@ li {
 .btnReg {
   min-width: 90px;
   height: 35px;
+
   font-size: 20px;
+  font-family: "Alegreya";
+
   color: rgb(122, 122, 122);
   padding: 5px;
   background-color: rgb(163, 203, 255);

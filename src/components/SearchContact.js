@@ -18,7 +18,7 @@ export default function SearchContact() {
   return (
     <div className={s.containerSearch}>
       <label className={s.labelSearch} htmlFor={id}>
-        Поиск контакта по имени
+        Пошук контактів по імені
       </label>
       <input
         type="text"

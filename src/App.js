@@ -24,24 +24,26 @@ export default function Mobile() {
   }, [dispatch]);
 
   return (
-    <div className={s.container}>
-      <NavBar />
-      <Switch>
-        <PublicRoute path="/" exact>
-          <HomeView />
-        </PublicRoute>
+    !refreshingPage && (
+      <div className={s.container}>
+        <NavBar />
+        <Switch>
+          <PublicRoute path="/" exact>
+            <HomeView />
+          </PublicRoute>
 
-        <PublicRoute path="/register" exact restricted>
-          <RegisterView />
-        </PublicRoute>
-        <PublicRoute path="/login" exact restricted>
-          <LoginView />
-        </PublicRoute>
+          <PublicRoute path="/register" exact restricted>
+            <RegisterView />
+          </PublicRoute>
+          <PublicRoute path="/login" exact restricted>
+            <LoginView />
+          </PublicRoute>
 
-        <PrivateRoute path="/contacts" exact>
-          <ContactsView />
-        </PrivateRoute>
-      </Switch>
-    </div>
+          <PrivateRoute path="/contacts" exact>
+            <ContactsView />
+          </PrivateRoute>
+        </Switch>
+      </div>
+    )
   );
 }

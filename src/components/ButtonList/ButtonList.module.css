@@ -7,20 +7,23 @@
   background: linear-gradient(-180deg, #000000, #fe44ee);
   border-width: 0;
   border-radius: 50px;
-  font-family: "Montserrat Alternates", sans-serif;
+  /* font-family: "Montserrat Alternates", sans-serif; */
   font-size: 14px;
   color: white;
   outline: none;
   cursor: pointer;
 
   margin-top: 15px;
+  font-family: "Alegreya";
 }
 .btnList:before {
   content: "\2718";
   position: absolute;
   left: 5px;
   top: 5px;
-  font-family: FontAwesome;
+  /* font-family: FontAwesome;
+   */
+  font-family: "Alegreya";
   color: white;
   width: 30px;
   height: 30px;

@@ -16,13 +16,22 @@ export default function Form() {
   const dispatch = useDispatch();
 
   const InputValues = (e) => {
+    const maxValues = e.target.max;
+    //  if (value.length > maxValues) {
+    //    return;
+    //  }
     const { name, value } = e.currentTarget;
 
     switch (name) {
       case "name":
         setName(value);
+
         break;
       case "number":
+        console.log(value.length);
+        if (value.length > maxValues) {
+          return;
+        }
         setNumber(value);
         break;
       default:
@@ -71,7 +80,7 @@ export default function Form() {
   return (
     <form className={s.form} onSubmit={addContact}>
       <label htmlFor={idName} className={s.labelName}>
-        Им'я
+        Ім'я
       </label>
       <input
         id={idName}
@@ -93,6 +102,7 @@ export default function Form() {
         value={number}
         onChange={InputValues}
         autoComplete="off"
+        max="10"
       ></input>
 
       <Button>Додати контакт</Button>
